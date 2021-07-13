@@ -84,7 +84,7 @@ class TeamMatches extends Component {
         />
         <div className="recent-matches-card-container">
           {recentMatches.map(match => (
-            <MatchCard recentMatchData={match} />
+            <MatchCard recentMatchData={match} key={match.id} />
           ))}
         </div>
       </>
