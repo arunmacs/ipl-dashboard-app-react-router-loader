@@ -30,3 +30,24 @@
   min-width: 85px;
   max-width: 100px;
 }
+
+@media (min-width: 768px) {
+  .team-card-container {
+    display: flex;
+    justify-content: space-around;
+    width: 300px;
+    padding: 22px 10px 22px 10px;
+    margin: 8px;
+  }
+
+  .team-logo {
+    height: 90px;
+    width: 80px;
+  }
+
+  .team-name {
+    font-size: 20px;
+    min-width: 90px;
+    max-width: 120px;
+  }
+}

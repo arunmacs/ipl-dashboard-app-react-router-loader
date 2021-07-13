@@ -1,6 +1,45 @@
 .team-matches-container {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  padding: 20px 15px 20px 15px;
+  overflow: auto;
+}
+
+.loader {
+  margin-top: 250px;
+}
+
+.banner-container {
+  width: 100%;
+  margin: 15px 0px 5px 0px;
+}
+
+.banner {
+  width: 100%;
+}
+
+.title-text {
+  align-self: flex-start;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 10px 0px 10px 0px;
+}
+
+.recent-matches-card-container {
+  width: 100%;
+  margin: 15px 0px 15px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .title-text {
+    font-size: 20px;
+  }
 }

@@ -1,1 +1,77 @@
-/* Write your CSS here */
+.recent-match-card {
+  background-color: #0f172a;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 13px 5px 13px 5px;
+  padding: 10px 15px 10px 15px;
+  width: 170px;
+  height: 250px;
+  max-width: 230px;
+  max-height: 330px;
+}
+
+.competing-team-logo {
+  width: 60px;
+  margin: 5px;
+}
+
+.competing-team {
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  color: #ffffff;
+  margin: 8px 0px 8px 0px;
+}
+
+.result {
+  font-size: 12px;
+  font-weight: 100;
+  text-align: center;
+  color: #ffffff;
+  margin: 8px 0px 8px 0px;
+}
+
+.match-status-win {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  color: #18ed66;
+  margin: 8px 0px 8px 0px;
+}
+
+.match-status-lost {
+  font-size: 15px;
+  font-weight: 300;
+  text-align: center;
+  color: #e31a1a;
+  margin: 8px 0px 8px 0px;
+}
+
+@media (min-width: 768px) {
+  .recent-match-card {
+    width: 250px;
+    height: 550px;
+  }
+
+  .competing-team-logo {
+    width: 160px;
+    margin: 5px;
+  }
+
+  .competing-team {
+    font-size: 22px;
+    font-weight: 200;
+  }
+
+  .result {
+    font-size: 14px;
+  }
+
+  .match-status {
+    font-size: 18px;
+    font-weight: 200;
+  }
+}

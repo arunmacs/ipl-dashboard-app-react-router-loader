@@ -1,5 +1,7 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
+import LatestMatch from '../LatestMatch'
+import MatchCard from '../MatchCard'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import './index.css'
 
@@ -49,12 +51,13 @@ class TeamMatches extends Component {
     const response = await fetch(API_URL)
     const data = await response.json()
     const updatedData = this.getFormattedResponseData(data)
+
     const {latestMatchDetails, recentMatches, teambannerUrl} = updatedData
     const formattedLatestMatchDetails = this.getFormattedLatestRecentMatches(
       latestMatchDetails,
     )
-    const formattedRecentMatches = this.getFormattedLatestRecentMatches(
-      recentMatches,
+    const formattedRecentMatches = recentMatches.map(item =>
+      this.getFormattedLatestRecentMatches(item),
     )
     const updatedStateData = {
       latestMatchDetails: formattedLatestMatchDetails,
@@ -64,14 +67,44 @@ class TeamMatches extends Component {
     this.setState({teamMatchData: updatedStateData, stillLoading: false})
   }
 
+  renderTeamMatchDetails = () => {
+    const {teamMatchData} = this.state
+    const {teamBannerUrl, latestMatchDetails, recentMatches} = teamMatchData
+    console.log(latestMatchDetails, recentMatches)
+
+    return (
+      <>
+        <div className="banner-container">
+          <img src={teamBannerUrl} alt={teamBannerUrl} className="banner" />
+        </div>
+        <p className="title-text">Latest Matches</p>
+        <LatestMatch
+          latestMatchData={latestMatchDetails}
+          key={latestMatchDetails.id}
+        />
+        <div className="recent-matches-card-container">
+          {recentMatches.map(match => (
+            <MatchCard recentMatchData={match} />
+          ))}
+        </div>
+      </>
+    )
+  }
+
   renderLoaderAnimation = () => (
     <div testid="loader">
-      <Loader type="Oval" color="#00bfff" height={80} width={80} />
+      <Loader
+        type="Oval"
+        className="loader"
+        color="#00bfff"
+        height={80}
+        width={80}
+      />
     </div>
   )
 
   render() {
-    const {stillLoading, teamMatchData} = this.state
+    const {stillLoading} = this.state
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -82,7 +115,9 @@ class TeamMatches extends Component {
         className="team-matches-container"
         style={{backgroundColor: bgColor}}
       >
-        {stillLoading ? this.renderLoaderAnimation() : <h1>Team Matches </h1>}
+        {stillLoading
+          ? this.renderLoaderAnimation()
+          : this.renderTeamMatchDetails()}
       </div>
     )
   }

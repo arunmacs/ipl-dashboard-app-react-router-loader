@@ -1,1 +1,140 @@
-/* Write your CSS here */
+.latest-match-card {
+  background-color: #0f172a;
+  width: 100%;
+  padding: 20px 10px 20px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.latest-match-details-container {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.match-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 10px;
+}
+
+.competing-team {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: left;
+  margin: 8px 0px 8px 0px;
+}
+
+.date {
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: left;
+  margin: 8px 0px 8px 0px;
+}
+
+.venue {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  margin: 8px 0px 8px 0px;
+}
+
+.result {
+  font-size: 12px;
+  font-weight: 400;
+  text-align: left;
+  color: #ffffff;
+  margin: 8px 0px 8px 0px;
+}
+
+.competing-team-logo {
+  width: 80px;
+  margin: 10px;
+}
+
+.match-summary-container {
+  width: 90%;
+  padding: 5px 10px 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  border-top: 2px solid #475569;
+}
+
+.summary-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 8px 0px 8px 0px;
+  width: 85%;
+}
+
+.summary-info {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 8px 0px 8px 0px;
+  width: 85%;
+}
+
+@media (min-width: 768px) {
+  .latest-match-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .latest-match-details-container {
+    justify-content: space-between;
+    width: 60%;
+    margin: 5px;
+  }
+  .match-summary-container {
+    width: 35%;
+    margin: 5px;
+    border-top: none;
+  }
+  .competing-team {
+    font-size: 25px;
+  }
+
+  .date {
+    font-size: 20px;
+  }
+
+  .venue {
+    font-size: 15px;
+  }
+
+  .result {
+    font-size: 15px;
+  }
+  .summary-title {
+    font-size: 18px;
+    text-align: right;
+  }
+
+  .summary-info {
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 8px 0px 8px 0px;
+    width: 85%;
+    text-align: right;
+  }
+  .competing-team-logo {
+    height: 140px;
+    width: 160px;
+  }
+}
